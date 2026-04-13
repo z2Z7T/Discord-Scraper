@@ -9,10 +9,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Dynamically get the directory where this exact .py file lives
-BASE_DIR = os.getenv('DATABASE_FOLDER')
-
-# Route the database to that exact folder
-DB_PATH = BASE_DIR / "server_archive.db"
+folder_path = os.getenv('DATABASE_FOLDER')
+BASE_DIR = Path(folder_path)
+print(f"Database will be saved to: {DB_PATH}")
 
 # Set up intents
 intents = discord.Intents.default()
