@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Dynamically get the directory where this exact .py file lives
-BASE_DIR = Path(__file__).parent
+BASE_DIR = os.getenv('DATABASE_FOLDER')
 
 # Route the database to that exact folder
 DB_PATH = BASE_DIR / "server_archive.db"
