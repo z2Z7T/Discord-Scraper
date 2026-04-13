@@ -8,9 +8,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Dynamically get the directory where this exact .py file lives
+
 folder_path = os.getenv('DATABASE_FOLDER')
 BASE_DIR = Path(folder_path)
+DB_PATH = BASE_DIR / "discord_backup.db"
 print(f"Database will be saved to: {DB_PATH}")
 
 # Set up intents
